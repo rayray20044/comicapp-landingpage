@@ -1,0 +1,194 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: white;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 24px;
+  color: #000;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Buttons */
+.btn {
+  padding: 8px 16px;
+  border-radius: 25px;
+  border: 2px solid #000;
+  background-color: white;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+  display: inline-block;
+}
+
+/* Hero Section */
+.hero {
+  background-color: rgba(255, 161, 0, 0.41);
+  padding: 200px 40px;
+  background-image: url('../img/comic-bg.png');
+  background-blend-mode: overlay;
+  background-size: cover;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero h1 {
+  font-size: 40px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+/* Tagline Section */
+.tagline {
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+/* Feature Section */
+.feature-section {
+  padding: 60px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-content {
+  max-width: 500px;
+}
+
+.feature-section h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.feature-section p {
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.phone-mockup {
+  max-width: 300px;
+}
+
+/* Cards Section */
+.cards-section {
+  background-color: #111;
+  padding: 60px 40px;
+  position: relative;
+}
+
+.section-header {
+  color: white;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 24px;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  border-radius: 10px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.card-icon {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.card p {
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* Card Colors */
+.card-yellow {
+  background-color: #F8D64E;
+}
+
+.card-orange {
+  background-color: #F8A54E;
+}
+
+.card-blue {
+  background-color: #A0E6FF;
+}
+
+.card-green {
+  background-color: #B8F8A5;
+}
+
+/* Lightning Decorations */
+.lightning {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 40px;
+  color: #F8D64E;
+  transform: rotate(20deg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .feature-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .feature-content {
+    margin-bottom: 40px;
+  }
+
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+}
