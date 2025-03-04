@@ -84,8 +84,6 @@ body {
   justify-content: space-between;
   position: relative;
   overflow: hidden;
-  /* Optional: add background-color if desired */
-  /* background-color: #f9f9f9; */
 }
 
 .feature-content {
@@ -94,11 +92,11 @@ body {
 }
 
 .feature-section h2 {
-  position: relative; /* Establishes positioning context */
+  position: relative;
   font-size: 30px;
   margin-bottom: 20px;
-  top: 20px;   /* Moves the element down */
-  right: 1500px;  /* Moves the element to the left relative to its normal position */
+  top: 20px;
+  right: 1500px;
 }
 
 .feature-section p {
@@ -110,25 +108,25 @@ body {
 }
 
 .phone-mockup1 {
-  max-width: 200px;
+  max-width: 400px;
   position: absolute;
-  top: 50px; /* adjust as needed */
-  right: 550px; /* adjust as needed */
+  top: 50px;
+  right: 550px;
 }
 
 
 .phone-mockup2 {
-  max-width: 200px;
+  max-width: 400px;
   position: absolute;
-  top: 50px; /* adjust as needed */
-  right: 1000px; /* adjust as needed */
+  top: 50px;
+  right: 1000px;
 }
 
 .phone-mockup3 {
-  max-width: 200px;
+  max-width: 400px;
   position: absolute;
-  top: 50px; /* adjust as needed */
-  right: 100px; /* adjust as needed */
+  top: 50px;
+  right: 100px;
 }
 
 
