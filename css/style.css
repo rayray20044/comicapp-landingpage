@@ -1,4 +1,3 @@
-/* Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +9,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Navbar */
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -36,7 +35,7 @@ body {
   color: #333;
 }
 
-/* Buttons */
+
 .btn1,
 .btn2 {
   padding: 8px 16px;
@@ -52,11 +51,10 @@ body {
 
 .btn2 {
   position: relative;
-  /* Removed fixed positioning to allow flexibility on mobile */
   margin-top: 20px;
 }
 
-/* Hero Section */
+
 .hero {
   background-color: rgba(255, 161, 0, 0.41);
   padding: 200px 40px;
@@ -75,7 +73,7 @@ body {
   margin-bottom: 20px;
 }
 
-/* Tagline Section */
+
 .tagline {
   background-color: #111;
   color: white;
@@ -85,19 +83,20 @@ body {
 
 /* Feature Section */
 .feature-section {
-  padding: 170px 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 170px 40px;
+  gap: 40px;
   position: relative;
   overflow: hidden;
-  flex-wrap: wrap;
 }
 
 .feature-content {
-  max-width: 300px;
+  max-width: 400px;
   margin: 0 auto;
   text-align: left;
+  flex-shrink: 0;
 }
 
 .feature-section h2 {
@@ -110,16 +109,25 @@ body {
   line-height: 1.6;
 }
 
-/* Phone Mockups */
+.phone-mockup-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.phone-mockup-item {
+  flex: 0 0 auto;
+}
+
 .phone-mockup1,
 .phone-mockup2,
 .phone-mockup3 {
-  max-width: 300px;
-  position: relative;
-  margin: 20px auto;
+  max-width: 250px;
+  height: auto;
 }
 
-/* Cards Section */
+
 .cards-section {
   background-color: #111;
   padding: 60px 40px;
@@ -165,7 +173,7 @@ body {
   font-size: 14px;
 }
 
-/* Card Colors */
+
 .card-yellow { background-color: #F8D64E; }
 .card-orange { background-color: #F8A54E; }
 .card-blue   { background-color: #A0E6FF; }
@@ -173,17 +181,7 @@ body {
 .card-red    { background-color: #FF7575; }
 .card-purple { background-color: #a2bdfc; }
 
-/* Lightning Decorations */
-.lightning {
-  position: absolute;
-  top: 20px;
-  right: 40px;
-  font-size: 40px;
-  color: #F8D64E;
-  transform: rotate(20deg);
-}
 
-/* Rating Section */
 .rating-section {
   background-color: rgba(255, 184, 77, 0.8);
   padding: 3rem;
@@ -231,7 +229,7 @@ body {
   margin: 0.5rem 0;
 }
 
-/* Download Section */
+
 .download-section {
   background-color: #FFFFFF;
   padding: 3rem 2rem;
@@ -269,7 +267,7 @@ body {
   background-color: #e67300;
 }
 
-/* Water and Fruit Icons */
+
 .bg-icons {
   position: absolute;
   width: 100%;
@@ -337,61 +335,139 @@ body {
   padding-top: 1rem;
 }
 
-/* Phone version */
+
 @media (max-width: 768px) {
+
   .btn1 {
     display: none;
   }
+
   .navbar {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-  }
-  .nav-links {
-    flex-direction: row;
-    gap: 10px;
-  }
-  .nav-links a {
-    font-size: 14px;
+    flex-direction: column;
+    padding: 15px 20px;
+    gap: 15px;
   }
 
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 30px;
+  }
+  
+
+  /* Hero Section */
   .hero {
     padding: 100px 20px;
-    background-size: cover;
-  }
-  .hero h1 {
-    font-size: 32px;
     text-align: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+    line-height: 1.4;
   }
 
   .feature-section {
     flex-direction: column;
-    text-align: center;
-    padding: 80px 20px;
+    padding: 100px 20px;
+    gap: 30px;
   }
+
   .feature-content {
-    max-width: 90%;
-    margin: 0 auto 20px;
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
   }
-  .feature-section h2,
-  .feature-section p {
-    position: static;
-    margin: 10px 0;
+
+
+  .phone-mockup-container {
+    display: flex;
+    overflow-x: scroll;
+    width: 100%;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 20px 0;
+    gap: 20px;
   }
+
+
+  .phone-mockup-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .phone-mockup-item {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
   .phone-mockup1,
   .phone-mockup2,
   .phone-mockup3 {
-    position: static;
-    margin: 10px auto;
-    max-width: 80%;
+    max-width: 200px;
+    margin: 0 10px;
   }
 
-  .cards-container {
-    grid-template-columns: 1fr;
+  .btn2 {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto;
+    text-align: center;
   }
 
-  .download-section {
-    padding: 2rem 1rem;
+
+  .rating-section-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .rating-section-item {
+    width: 90%;
+    max-width: 400px;
+  }
+
+
+  .download-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .download-description {
+    font-size: 0.9rem;
+  }
+
+  .download-btn {
+    width: 90%;
+    max-width: 300px;
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+
+  .footer-top {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .social-icons {
+    margin-top: 10px;
+  }
+
+  .footer-bottom {
+    font-size: 0.7rem;
+  }
+
+  .bg-icons {
+    opacity: 0.1;
   }
 }
