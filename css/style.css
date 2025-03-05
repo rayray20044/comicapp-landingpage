@@ -354,7 +354,7 @@ body {
     width: 100%;
     gap: 30px;
   }
-  
+
 
   /* Hero Section */
   .hero {
@@ -469,5 +469,59 @@ body {
 
   .bg-icons {
     opacity: 0.1;
+  }
+  /* Existing desktop styles remain unchanged */
+  @media (max-width: 768px) {
+    .cards-section {
+      padding: 60px 0; /* Reduce horizontal padding */
+    }
+
+    .cards-container {
+      /* Replace grid with flex for horizontal scrolling */
+      display: flex;
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding: 20px 0;
+      gap: 20px;
+      max-width: 100%;
+      margin: 0;
+    }
+
+    .cards-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .card {
+      /* Make cards scrollable and snappable */
+      flex: 0 0 calc(100% - 40px);
+      scroll-snap-align: center;
+      margin: 0 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    /* Add visual indicators for horizontal scroll */
+    .cards-section::after {
+      content: '⟶';
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      color: white;
+      font-size: 24px;
+      opacity: 0.5;
+      animation: scroll-hint 1s infinite alternate;
+    }
+
+    @keyframes scroll-hint {
+      from { transform: translateX(0); }
+      to { transform: translateX(10px); }
+    }
   }
 }
