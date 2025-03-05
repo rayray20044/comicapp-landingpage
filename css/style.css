@@ -37,7 +37,8 @@ body {
 }
 
 /* Buttons */
-.btn1 {
+.btn1,
+.btn2 {
   padding: 8px 16px;
   border-radius: 25px;
   border: 2px solid #000;
@@ -50,18 +51,9 @@ body {
 }
 
 .btn2 {
-  padding: 8px 16px;
-  border-radius: 25px;
-  border: 2px solid #000;
-  background-color: white;
-  font-weight: bold;
-  cursor: pointer;
-  text-decoration: none;
-  color: #000;
-  display: inline-block;
   position: relative;
-  top: 200px;
-  right: 40px;
+  /* Removed fixed positioning to allow flexibility on mobile */
+  margin-top: 20px;
 }
 
 /* Hero Section */
@@ -99,53 +91,33 @@ body {
   justify-content: space-between;
   position: relative;
   overflow: hidden;
+  flex-wrap: wrap;
 }
 
 .feature-content {
   max-width: 300px;
-
+  margin: 0 auto;
+  text-align: left;
 }
 
 .feature-section h2 {
-  position: relative;
   font-size: 30px;
   margin-bottom: 20px;
-  top: 20px;
-  right: 1100px;
 }
 
 .feature-section p {
-  position: relative;
   margin-bottom: 30px;
   line-height: 1.6;
-  top: 30px;
-  right: 1100px;
 }
 
-/* phone with your journey */
-.phone-mockup1 {
-  max-width: 300px;
-  position: absolute;
-  top: 30px;
-  right: 400px;
-}
-
-/* phone with the starting page */
-.phone-mockup2 {
-  max-width: 300px;
-  position: absolute;
-  top: 30px;
-  right: 750px;
-}
-
-/* phone with the story  */
+/* Phone Mockups */
+.phone-mockup1,
+.phone-mockup2,
 .phone-mockup3 {
   max-width: 300px;
-  position: absolute;
-  top: 30px;
-  right: 50px;
+  position: relative;
+  margin: 20px auto;
 }
-
 
 /* Cards Section */
 .cards-section {
@@ -194,29 +166,12 @@ body {
 }
 
 /* Card Colors */
-.card-yellow {
-  background-color: #F8D64E;
-}
-
-.card-orange {
-  background-color: #F8A54E;
-}
-
-.card-blue {
-  background-color: #A0E6FF;
-}
-
-.card-green {
-  background-color: #B8F8A5;
-}
-
-.card-red {
-  background-color: #FF7575;
-}
-
-.card-purple {
-  background-color: #a2bdfc;
-}
+.card-yellow { background-color: #F8D64E; }
+.card-orange { background-color: #F8A54E; }
+.card-blue   { background-color: #A0E6FF; }
+.card-green  { background-color: #B8F8A5; }
+.card-red    { background-color: #FF7575; }
+.card-purple { background-color: #a2bdfc; }
 
 /* Lightning Decorations */
 .lightning {
@@ -231,15 +186,14 @@ body {
 /* Rating Section */
 .rating-section {
   background-color: rgba(255, 184, 77, 0.8);
-  padding: 3rem;      /* Increased padding */
-  min-height: 400px;  /* Ensures the section is at least 400px tall */
+  padding: 3rem;
+  min-height: 400px;
   text-align: center;
 }
 
-
 .rating-section h2 {
   font-size: 1.8rem;
-  color: #000000;
+  color: #000;
   margin-bottom: 2rem;
 }
 
@@ -383,20 +337,61 @@ body {
   padding-top: 1rem;
 }
 
-/* Responsive */
+/* Phone version */
 @media (max-width: 768px) {
-  .feature-section {
-    flex-direction: column;
+  .btn1 {
+    display: none;
+  }
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  .nav-links {
+    flex-direction: row;
+    gap: 10px;
+  }
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  .hero {
+    padding: 100px 20px;
+    background-size: cover;
+  }
+  .hero h1 {
+    font-size: 32px;
     text-align: center;
   }
 
+  .feature-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 80px 20px;
+  }
   .feature-content {
-    margin-bottom: 40px;
+    max-width: 90%;
+    margin: 0 auto 20px;
+  }
+  .feature-section h2,
+  .feature-section p {
+    position: static;
+    margin: 10px 0;
+  }
+  .phone-mockup1,
+  .phone-mockup2,
+  .phone-mockup3 {
+    position: static;
+    margin: 10px auto;
+    max-width: 80%;
   }
 
   .cards-container {
     grid-template-columns: 1fr;
   }
+
+  .download-section {
+    padding: 2rem 1rem;
+  }
 }
-
-
